@@ -92,8 +92,27 @@ const arr = [89, 30, 25, 32, 72, 70, 51, 42, 25, 24, 53, 55, 78, 50, 13, 40, 48,
 // console.log(pCounter, "partition counter")
 // let totalCount = qCounter + sCounter + pCounter;
 // console.log(totalCount, "Total count of operations")
-console.log(mergeSort(arr))
-console.log(mergeSortCounter, "mergeSortCounter")
-console.log(mergeCounter, "mergeCounter")
-let totalMergeCounter = mergeSortCounter + mergeCounter
-console.log(totalMergeCounter, "totalMergeCounter")
+// console.log(mergeSort(arr))
+// console.log(mergeSortCounter, "mergeSortCounter")
+// console.log(mergeCounter, "mergeCounter")
+// let totalMergeCounter = mergeSortCounter + mergeCounter
+// console.log(totalMergeCounter, "totalMergeCounter")
+
+function bucketSort(arr, min, max) {
+
+  let bucketCount = Math.floor((max - min) + 1);
+  let result = new Array(bucketCount);
+
+  for(let i = 0; i < arr.length; i++){
+    result[arr[i] - min] = arr[i];
+  }
+
+  let ans = []
+  result.forEach(item => {
+    ans.push(item)
+  });
+  return ans
+}
+
+const arr1 = [1, 7, 2, 6, 4, 9]
+console.log(bucketSort(arr1, 1, 9))
