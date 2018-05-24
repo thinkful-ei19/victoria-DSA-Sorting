@@ -128,4 +128,18 @@ function sortInPlace(array){
 }
 
 const arr2 = [1, 2, 3, 4, 5]
-console.log(sortInPlace(arr2))
+//console.log(sortInPlace(arr2))
+
+function sortingBooks(arr){
+  return arr.sort((book1, book2) => book1.author > book2.author)
+}
+
+function sortingBooks2(arr){
+  return quickSort(arr)
+}
+
+const library = ['The REXX Language', 'Teach Yourself C++ In 21 Days', 'The C++ Programming Language',
+                'JavaScript: The Good Parts', 'JavaScript: The Definitive Guide', 'Windows Vista for Dummies',
+                'NIV Study Bible', 'Starlight and Time', 'Jane\'s Fighting Ships', 'The Official Chuck Norris Fact Book'];
+
+//console.log(sortingBooks2(library))
