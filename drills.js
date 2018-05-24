@@ -100,19 +100,19 @@ const arr = [89, 30, 25, 32, 72, 70, 51, 42, 25, 24, 53, 55, 78, 50, 13, 40, 48,
 
 function bucketSort(arr, min, max) {
 
-  let bucketCount = Math.floor((max - min) + 1);
-  let result = new Array(bucketCount);
+  let result = new Array(max - min + 1);
 
   for(let i = 0; i < arr.length; i++){
-    result[arr[i] - min] = arr[i];
+    result[arr[i] - min] = (result[arr[i] - min]|0) +1;
   }
-
   let ans = []
-  result.forEach(item => {
-    ans.push(item)
-  });
+  for(let i = min; i <= max; i++){
+    for(let j = 0; j < result[i-min]; j++){
+      ans.push(i)
+    }
+  }
   return ans
 }
 
-const arr1 = [1, 7, 2, 6, 4, 9]
+const arr1 = [1, 7, 2, 2, 2, 2, 6, 4, 9]
 console.log(bucketSort(arr1, 1, 9))
